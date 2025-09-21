@@ -151,6 +151,7 @@ import AdminMainContent from './DashboardStats'; // your current stats + recent 
 import CreateVehicleCategory from '../vehicle/AddVehicleCategory';
 import Vehicles from  '../vehicle/Vehicals'
 import UserManagement from '../User/UserManagement';
+import ErrorBoundary from '../ErrorBoundary';
 // import Vehicles from './Vehicles';
 // import Rentals from './Rentals';
 // import Reports from './Reports';
@@ -164,7 +165,11 @@ const AdminDashboard = () => {
       case 'dashboard':
         return <AdminMainContent />;
       case 'users':
-        return <UserManagement />;
+        return (
+          <ErrorBoundary>
+            <UserManagement />
+          </ErrorBoundary>
+        );
       case 'vehicalCategory':
         return <CreateVehicleCategory />;
       case 'vehicles':

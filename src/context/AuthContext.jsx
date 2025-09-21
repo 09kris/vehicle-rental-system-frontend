@@ -74,9 +74,9 @@ export const AuthProvider = ({ children }) => {
       
       const { token, user_type } = response.data;
       
-      if (user_type !== 'admin') {
-        throw new Error("Access restricted to administrators only");
-      }
+      // if (user_type !== 'admin') {
+      //   throw new Error("Access restricted to administrators only");
+      // }
       
       setToken(token);
       await fetchProfile();
